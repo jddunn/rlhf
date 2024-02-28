@@ -16,7 +16,7 @@ class NLP:
         self,
         default_model_name: str = "nakodanei/Blue-Orchid-2x7b",
         ppo_model_name: str = None,
-        rewads_model_name: str = None,
+        reward_model_name: str = None,
         models_dir: str = "./models",
         data_dir: str = "./data",
         load_model: bool = True,
@@ -58,7 +58,12 @@ class NLP:
         self.tokenizer = None
         self.model = None
 
-        self.ppo = PPO(utils=self.utils, use_lora=use_lora, data_dir=self.data_dir)
+        self.ppo = PPO(
+            utils=self.utils,
+            use_lora=use_lora,
+            data_dir=self.data_dir,
+            reward_model_name=reward_model_name,
+        )
         if load_model:
             self.load_model(self.model_name)
         return

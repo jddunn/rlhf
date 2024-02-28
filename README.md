@@ -1,6 +1,6 @@
 ## RLHF (Reinforcement learning from human feedback) training and usage
 
-This repo comprises a library and modules to allow easy trainig, deploying, and usage of fine-tuned models using Reinforcement Learning from Human Feedback (RLHF), incorporating rewards model alongside Proximal Policy Optimization (PPO) techniques.
+This repo comprises a library and modules to allow easy trainig, deploying, and usage of fine-tuned models using Reinforcement Learning from Human Feedback (RLHF), incorporating a reward model alongside Proximal Policy Optimization (PPO) techniques.
 
 By default models are loaded to be quantized with PEFT / LoRA (along with other optimization techniques) to be able to run this more easily on consumer hardware, though this can be turned off. 
 

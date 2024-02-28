@@ -31,7 +31,7 @@ class Files:
                 )
             )
         return
-    
+
     @staticmethod
     def create_data_dir(path: str) -> None:
         # If path doesn't exist, make it
