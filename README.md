@@ -88,27 +88,33 @@ print(response)
 
 ### Train a fine-tuned PPO model:
 
+Example: 
+
+`python cli.py train ppo "ppo_finetune.csv" "meta-llama/Llama-2-7b-chat-hf" "facebook/opt-350m" "Anthropic/hh-rlhf" "ppo-model-finetuned"`
+
 - First arg (after specifying type of CLI, `train` and `ppo`): name of dataset to fine-tune PPO model from (should be a local CSV file inside /data folder or the directory passed as `data_dir` in PPO class, with a column called `query` containing texts / prompts)
 - Second arg: name of base model to fine-tune (can be local or from HF hub)
 - Third arg: name of the rewards model to use for PPO training (can be local or from HF hub).
 - Fourth arg: name of dataset to use for rewards model training (can be local or from HB hub)
 - Fith arg: (optional): name of fine-tuned model to save. Defaults to name of base model inside the folder /ppo in /models.
 
-`python cli.py train ppo "ppo_finetune.csv" "meta-llama/Llama-2-7b-chat-hf" "facebook/opt-350m" "Anthropic/hh-rlhf" "ppo-model-finetuned"`
-
 ### Evaluate / make prediction from a HF or local model:
+
+Example:
+
+`python cli.py eval model "meta-llama/Llama-2-7b-chat-hf" "The movie was really"`
 
 - First arg (after specifying type of CLI, `eval` and `model`): Name of model (can be local or from HB hub) to make prediction from
 - Second arg: The query to make a prediction from
 
-`python cli.py eval model "meta-llama/Llama-2-7b-chat-hf" "The movie was really"`
-
 ### Evaluate / make prediction from a local fine-tuned PPO model (saved inside /models/ppo)
+
+Example:
+
+`python cli.py eval ppo "my-fine-tuned-model-ppo" "The move was really"`
 
 - First arg (after specifying type of CLI, `eval` and `ppo`): Name of model (can be local or from HB hub) to make prediction from
 - Second arg: The query to make a prediction from
-
-`python cli.py eval ppo "my-fine-tuned-model-ppo" "The move was really"`
 
 ## Linting
 
