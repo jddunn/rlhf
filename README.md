@@ -49,7 +49,7 @@ Get your Hugging Face user access token to download models from their hub: https
 ### Train a fine-tuned PPO model:
 
 ```
-from main import NLP
+from .nlp.main import NLP
 nlp = NLP(
     default_model_name="mistralai/Mistral-7B-v0.1",
     rewards_model_name="facebook/opt-350m",
@@ -70,7 +70,7 @@ print("Trained PPO model at: " + ppo_name + ".")
 ### Evaluate / predict from a PPO model
 
 ```
-from main import NLP
+from .nlp.main import NLP
 ppo_model_name = "my_ppo_model_name"
 query = "The movie was really"
 nlp = NLP(
