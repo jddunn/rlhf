@@ -94,21 +94,21 @@ print(response)
 - Fourth arg: name of dataset to use for rewards model training (can be local or from HB hub)
 - Fith arg: (optional): name of fine-tuned model to save. Defaults to name of base model inside the folder /ppo in /models.
 
-`python nlp/cli.py train ppo "ppo_finetune.csv" "meta-llama/Llama-2-7b-chat-hf" "facebook/opt-350m" "Anthropic/hh-rlhf" "ppo-model-finetuned"`
+`python cli.py train ppo "ppo_finetune.csv" "meta-llama/Llama-2-7b-chat-hf" "facebook/opt-350m" "Anthropic/hh-rlhf" "ppo-model-finetuned"`
 
 ### Evaluate / make prediction from a HF or local model:
 
 - First arg (after specifying type of CLI, `eval` and `model`): Name of model (can be local or from HB hub) to make prediction from
 - Second arg: The query to make a prediction from
 
-`python nlp/cli.py eval model "meta-llama/Llama-2-7b-chat-hf" "The movie was really"`
+`python cli.py eval model "meta-llama/Llama-2-7b-chat-hf" "The movie was really"`
 
 ### Evaluate / make prediction from a local fine-tuned PPO model (saved inside /models/ppo)
 
 - First arg (after specifying type of CLI, `eval` and `ppo`): Name of model (can be local or from HB hub) to make prediction from
 - Second arg: The query to make a prediction from
 
-`python nlp/cli.py eval ppo "my-fine-tuned-model-ppo" "The move was really"`
+`python cli.py eval ppo "my-fine-tuned-model-ppo" "The move was really"`
 
 ## Linting
 

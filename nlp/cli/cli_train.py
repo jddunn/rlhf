@@ -1,6 +1,6 @@
 import click
 
-from main import NLP
+from nlp.main import NLP
 
 
 # Command Group
